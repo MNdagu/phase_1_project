@@ -37,12 +37,13 @@
             </ul>
             <ul class="dates"></ul>
         </div>
-        <select id="year" onchange="jump()"></select>
+        
     </div>
 
     <div class="event-container">
         <p>Date :  <span id="event-date"></span></p>
-        <p>Event : <span id="event-description"></span></p>
+        <p>Event name : <span id="event-name"></span></p>
+        <p>Event Description : <span id="event-description"></span></p>
         <p>Reminder : <span id="event-reminder"></span></p>
 
 
@@ -54,6 +55,25 @@
             <i class='bx bxs-calendar-event' style="font-size: 40px;"></i>
             <form id="form">
                 <input id="event-input"type="text" placeholder="Enter event" required>
+                <input type="text" id="event-description-input" placeholder="Enter event descrption">
+                <p>Want to set a reminder?</p>
+                <p>Please enter event date</p>
+                <!-- <select id="countdown-month">
+                    <option value=0>Jan</option>
+                    <option value=1>Feb</option>
+                    <option value=2>Mar</option>
+                    <option value=3>Apr</option>
+                    <option value=4>May</option>
+                    <option value=5>Jun</option>
+                    <option value=6>Jul</option>
+                    <option value=7>Aug</option>
+                    <option value=8>Sep</option>
+                    <option value=9>Oct</option>
+                    <option value=10>Nov</option>
+                    <option value=11>Dec</option>
+                </select> -->
+                <input type="number" name="date" id="countdown-date" placeholder="Enter date">
+                <!-- <input type="text" name="month" id="countdown-month" placeholder="Enter month"> -->
                 <input id="submit"type="submit" value="add">
             
             </form>
