@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let year = date.getFullYear();
     let month = date.getMonth();
 
-    // Initialize events from local storage or an empty object
-    let events = JSON.parse(localStorage.getItem('events')) || {};
+    // Initialize events object
+    let events = {};
 
     // Array of month names
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -161,15 +161,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 description: newDescription,
                 reminder: countdownTime
             };
-            localStorage.setItem('events', JSON.stringify(events));
 
             event_description.textContent = newDescription;
             event_name.textContent = newEvent;
             generateCalendar();
         }
 
+        // Update db.json via fetch
+        fetch('http://localhost:3000/events', {
+            method: 'POST', // Initiate a post request
+            headers: {
+                'Content-Type': 'application/json' //Specifies that the content of the request body is in json format
+            },
+            body: JSON.stringify({ id: eventKey, name: newEvent, description: newDescription, reminder: countdownTime })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Event added to JSON server:', data);
+        })
+        .catch(error => {
+            console.error('Error adding event to JSON server:', error);
+        });
+
         // Reset the form and close the modal
         form.reset();
         document.querySelector('.modal').style.display = 'none';
     });
+
+    // Load events from JSON server on page load
+    fetch('http://localhost:3000/events')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(event => {
+                events[event.id] = {//Populate events object according to the id
+                    name: event.name,
+                    description: event.description,
+                    reminder: event.reminder
+                };
+            });
+            generateCalendar();
+        })
+        .catch(error => {
+            console.error('Error loading events from JSON server:', error);
+        });
 });

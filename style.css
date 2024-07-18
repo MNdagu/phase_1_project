@@ -183,13 +183,13 @@ header .current-date {
 
 .modal-content {
     width: 500px;
-    height: 250px;
+    height: 150px;
     background-color: bisque;
     border-radius: 5px;
     text-align: center;
     padding: 10px;
     position: relative;
-    margin-bottom: 500px;
+    margin-bottom: 330px;
 
 
 }
