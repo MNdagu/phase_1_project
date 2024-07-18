@@ -21,3 +21,4 @@ Events variable is initialized as an empty object</p>
 <p>An event listener to handle form submission is then implemented so that the app is able to get data from the user using the modal pop up.Finally the event details are saved to the events object in the db.json file</p>
 <p>Finally we implement the fetch and post feature where when an event is added to the calendar it is posted to the event object inside our db.json. When the page reloades the code fetches events from http://localhost:3000/events, populates the events object with the retrieved data, and then calls generateCalendar() to update the calendar based on the fetched events.</p>
 
+

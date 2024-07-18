@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "id": "2024-9-23",
+      "name": "Birthday",
+      "description": "My birthday",
+      "reminder": "2024-09-22T21:00:00.000Z"
+    },
+    {
+      "id": "2024-7-25",
+      "name": "Wedding",
+      "description": "Ken's wedding at Evergreen garden",
+      "reminder": "2024-07-24T21:00:00.000Z"
+    },
+    {
+      "id": "2024-8-3",
+      "name": "Birthday",
+      "description": "Mellissa's birthday party",
+      "reminder": "2024-08-02T21:00:00.000Z"
+    },
+    {
+      "id": "2024-12-20",
+      "name": "Christmas party",
+      "description": "Office Christmas party ",
+      "reminder": "2024-12-19T21:00:00.000Z"
+    }
+  ]
+}
