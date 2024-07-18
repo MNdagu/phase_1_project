@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Update db.json via fetch
-        fetch('http://localhost:3000/events', {
+        fetch('https://my-json-server.typicode.com/MNdagu/phase_1_project/events', {
             method: 'POST', // Initiate a post request
             headers: {
                 'Content-Type': 'application/json' //Specifies that the content of the request body is in json format
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Load events from JSON server on page load
-    fetch('http://localhost:3000/events')
+    fetch('https://my-json-server.typicode.com/MNdagu/phase_1_project/events')
         .then(response => response.json())
         .then(data => {
             data.forEach(event => {
